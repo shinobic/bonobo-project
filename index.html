@@ -1,7 +1,7 @@
 <head>
   <meta charset="UTF-8">
   <title>
-    La licence GPL pour les nuls
+    Suce mon Tweet!
   </title>
 
 
@@ -19,11 +19,41 @@
 <body>
 
 
+  <header>
+  <h1>Connexion</h1>
+  <form id="login">
+    <div class="session">
+      <label name="email">Adresse e-mail</label>
+      <input type="email" name="email" />
+      <input type="checkbox" name="session" value="sessionYes">
+
+    </div>
+    <div class="motPasse">
+      <label name="password">Mot de passe</label>
+      <input type="password" name="password" />
+      <a href="#">Mot de passe oublié ?</a>
+    </div>
+    <div class="button">
+      <input type="submit" name="loginOK" value="connexion" />
+    </div>
+  </form>
+</header>
+<div class="gauche">
+
+</div>
+<div class="droite">
+  <h2>Inscription</h2>
+  <form id="register">
+    <input type="text" name="prenom" placeholder="Prénom" />
+    <input type="text" name="nom" placeholder="Nom" />
+    <input type="email" name="emailRegister" placeholder="Adresse e-mail" />
+    <input type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" />
+    <input type="password" name="password" placeholder="Mot de passe" />
+    <input type="submit" name="registerOK" value="Inscription" />
 
 
-
-
-
+  </form>
+</div>
 </body>
 
 </html>
