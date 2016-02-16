@@ -17,11 +17,6 @@ header{
   top: 0;
 }
 
-.main{
-  height:auto;
-  border-radius: 25px 0 25px 0;
-  margin: 5% 0;
-}
 
 h1{
   text-align: center;
@@ -64,6 +59,14 @@ h1{
   border:grey solid 2px;
   background-color: yellow;
   position: relative;
+}
+
+.main{
+  height:auto;
+  border-radius: 25px 0 25px 0;
+  margin: 5% 0;
+  position: relative;
+  background-color: violet;
 }
 
 /*.gauche, .droite{
@@ -119,7 +122,6 @@ h1{
 }
 
 
-
 .button{
   padding: 4px;
   box-sizing: border-box;
@@ -134,7 +136,10 @@ h1{
 
 .clearfix{
   clear: both;
+  position: relative;
 }
+
+
 
 footer{
   height: 6vh;
