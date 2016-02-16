@@ -3,40 +3,63 @@
   padding : 0;
 }
 
-body {
+body, html {
   width:100%;
   height: 100%;
   color: black;
   background-color: grey;
+  position: absolute;
+  font-family: arial;
 }
 
+header{
+  background-color: pink;
+  top: 0;
+}
 
+.main{
+  height:auto;
 
-header{background-color: pink;}
+  border-radius: 25px 0 25px 0;
+  margin: 5% 0;
+}
 
 h1{
   text-align: center;
-
 }
 
 .navbar {
-  width: 100%;
   line-height: 5vh;
   /*background: #fff;*/
   background-color: green;
   padding: 0px;
   margin: 0px;
-  top: 0;
+
+}
+
+.navbar ul{
+  position: absolute;
+  right:0;
+  margin-right: 3%;
+}
+
+.navbar ul li{
+  display: inline;
+  line-height: 5vh;
 }
 
 .container{
+  height: 100%;
   margin: auto;
   border:grey solid 2px;
-  padding: 5%;
-  box-sizing: border-box;
+  background-color: yellow;
+  position: relative;
 }
 
-/*blocs de menu inscription / connexion*/
+/*.gauche, .droite{
+  border: white solid 2px;
+}*/
+
 .gauche{
   float:left;
 }
@@ -45,48 +68,29 @@ h1{
   float:right;
 }
 
-.texte-centre {
-  width: 470px;
-  height: 330px;
-  background-color: #fff;
-  margin-left: 150px;
-  margin-top: 150px;
-  display: inline-block;
+/*blocs de menu inscription / connexion*/
+#register, #login{
+  background-color: rgba(255, 255, 255, 0.4);
+  border: white solid 2px;
+  margin: auto;
+  margin-left: 5%;
+  padding: 5%;
+  border-radius: 15px;
+}
+#register h2, #login h2{
+  margin: auto;
+  margin-left: 5%;
+  padding: 5%;
 }
 
-.sign-up {
-  width: 300px;
-height: 120px;
-background-color: gold;
-float: right;
-margin-right: 10%;
-margin-top: 13%;
-}
-
-.sign-down {
-  width: 300px;
-  height: 200px;
-  background-color: red;
-  float:right;
-  margin-top: 25%;
-margin-right: -25.7%;
-}
-
-.footer {
-  width: 100%;
-  height: 50px;
-  background-color: yellow;
-  padding: 0px;
-  margin: 0px;
-  margin-top: 10%;
-}
 
 #register ul li, #login ul li{
   list-style-type: none;
   text-decoration: none;
   border-radius: 3px;
   text-align: center;
-  width:80px;
+  width:90%;
+  margin-bottom: 2%;
 }
 
 #register ul li input:active, #login ul li input:active{
@@ -95,17 +99,29 @@ margin-right: -25.7%;
   border-left: black solid 3px;
   border-top: #ccc solid 3px;
   border-right: #ccc solid 3px;
-
-
 }
 
-.halfinput{
-  width:180px;
+.button{
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background-color: rgba(0, 200, 200, 0.7);
+}
+
+footer{
+  height: 6vh;
+  bottom:0;
+  position:absolute;
+  margin: auto;
+  text-align: center;
+  background-color: blue;
+}
+
+footer ul li{
   display: inline;
-
+  margin-right: 2%;
+  line-height: 6vh;
 }
-
-
 
 .clearfix{
   clear: both;
