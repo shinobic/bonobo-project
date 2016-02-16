@@ -21,4 +21,39 @@ $(document).ready(function() {
        url : 'logoff.php' // La ressource ciblée
     });
   });
+  $("#unregister").on("submit", function(e) {
+    //e.preventDefault();
+    //requequette serveur pour la désinscription
+    $.ajax({
+       url : 'unregister.php' // La ressource ciblée
+    });
+  });
+  $("#tweet").on("submit", function(e) {
+    //e.preventDefault();
+    //requequette serveur pour le tweet
+    $.ajax({
+       url : 'tweet.php' // La ressource ciblée
+    });
+  });
+  $("#tweetoff").on("submit", function(e) {
+    //e.preventDefault();
+    //requequette serveur pour le délog
+    $.ajax({
+       url : 'tweetoff.php' // La ressource ciblée
+    });
+  });
+  $("#like").on("submit", function(e) {
+    //e.preventDefault();
+    //requequette serveur pour le like
+    $.ajax({
+       url : 'like.php' // La ressource ciblée
+    });
+  });
+  $("#retweet").on("submit", function(e) {
+    //e.preventDefault();
+    //requequette serveur pour le délog
+    $.ajax({
+       url : 'retweet.php' // La ressource ciblée
+    });
+  });
 })
