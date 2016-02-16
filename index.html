@@ -14,13 +14,12 @@
 
   <link rel="stylesheet" type="text/css" href="main.css" />
 
+  <!-- CDN JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <!-- Link javascript -->
-  <script type="text/javascript" src="script.js"></script>
+  <script src="script.js"></script>
 
-  <!-- CDN JQuery -->
-  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 </head>
 
@@ -31,8 +30,12 @@
   <h1>Bonobo Tweet</h1>
   </header>
 
-  <container>
-    <section class="gauche">
+  <div class"container">
+    <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-10">
+
+
+    <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 gauche">
       <h2>Connexion</h2>
       <form id="login">
         <div class="session">
@@ -50,12 +53,12 @@
       </form>
     </section>
 
-    <section class="droite">
+    <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 droite">
       <h2>Inscription</h2>
       <form id="register">
         <ul>
-          <li><input type="text" name="prenom" placeholder="Prénom" />
-          <input type="text" name="nom" placeholder="Nom" /></li>
+          <li><input class="halfinput" type="text" name="prenom" placeholder="Prénom" />
+          <input class="halfinput" type="text" name="nom" placeholder="Nom" /></li>
           <li><input type="email" name="emailRegister" placeholder="Adresse e-mail" /></li>
           <li><input type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" /></li>
           <li><input type="password" name="password" placeholder="Mot de passe" /></li>
@@ -67,7 +70,9 @@
 
     <!-- rétablie l'effet du float -->
     <div class="clearfix"></div>
-  </container>
+  </div>
+  </div>
+</div>
 
 
 </body>

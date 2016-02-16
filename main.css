@@ -9,6 +9,8 @@ body {
   height: 100%;
   color: black;
   background-color: grey;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 header{background-color: pink;}
@@ -25,6 +27,22 @@ header{background-color: pink;}
 
 .middle {
 
+}
+
+.container{
+  margin: auto;
+  border:grey solid 2px;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+/*blocs de menu inscription / connexion*/
+.gauche{
+  float:left;
+}
+
+.droite{
+  float:right;
 }
 
 .texte-centre {
