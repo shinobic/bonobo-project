@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <head>
   <meta charset="UTF-8">
   <title>
@@ -14,7 +12,15 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
+
+
+  <!-- Link javascript -->
+  <script type="text/javascript" src="script.js"></script>
+
+  <!-- CDN JQuery -->
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 </head>
 
@@ -22,62 +28,46 @@
 
 
   <header>
-
-
-
-    <div class="mod1 row">
-      <div class="col-xs-4">
-      </div>
-
-      <div class="col-xs-4">
-        <h1>Connexion</h1>
-        <form id="login">
-          <div class="session">
-            <label name="email">Adresse e-mail</label>
-            <input type="email" name="email" />
-          </div>
-
-
-
-
-          <div class="motPasse">
-            <label name="password">Mot de passe</label>
-            <input type="password" name="password" />
-            <a href="#">Mot de passe oublié ?</a>
-          </div>
-          <div class="button">
-            <input type="submit" name="loginOK" value="connexion" />
-          </div>
-        </form>
-      </div>
-
-      <div class="col-xs-4">
-      </div>
-    </div>
-
-
-
+  <h1>Bonobo Tweet</h1>
   </header>
 
-  <div class="gauche">
+  <container>
+    <section class="gauche">
+      <h2>Connexion</h2>
+      <form id="login">
+        <div class="session">
+          <label name="email">Adresse e-mail</label>
+          <input type="email" name="email" />
+        </div>
+        <div class="motPasse">
+          <label name="password">Mot de passe</label>
+          <input type="password" name="password" />
+          <a href="#">Mot de passe oublié ?</a>
+        </div>
+        <div class="button">
+          <input type="submit" name="loginOK" value="connexion" />
+        </div>
+      </form>
+    </section>
 
-  </div>
+    <section class="droite">
+      <h2>Inscription</h2>
+      <form id="register">
+        <ul>
+          <li><input type="text" name="prenom" placeholder="Prénom" />
+          <input type="text" name="nom" placeholder="Nom" /></li>
+          <li><input type="email" name="emailRegister" placeholder="Adresse e-mail" /></li>
+          <li><input type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" /></li>
+          <li><input type="password" name="password" placeholder="Mot de passe" /></li>
+          <li><input type="submit" name="registerOK" value="Inscription" /></li>
+        </ul>
 
-  <div class="mod1 row">
-    <div class="col-xs-12">
-      <div class="droite">
-        <h2>Inscription</h2>
-        <form id="register">
-          <input type="text" name="prenom" placeholder="Prénom" />
-          <input type="text" name="nom" placeholder="Nom" />
-          <input type="email" name="emailRegister" placeholder="Adresse e-mail" />
-          <input type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" />
-          <input type="password" name="password" placeholder="Mot de passe" />
-          <input type="submit" name="registerOK" value="Inscription" />
-      </div>
-    </div>
-    </form>
-  </div>
+      </form>
+    </section>
+
+    <div class="clearfix"></div> //rétablie l'effet du float
+  </container>
+
 
 </body>
 
