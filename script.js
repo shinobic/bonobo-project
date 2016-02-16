@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("#register").on("submit", function(e) {
     e.preventDefault();
-    
+
     //requequette serveur pour l'inscription
     var $this = $(this); // L'objet jQuery du formulaire
     // Je récupère les valeurs
