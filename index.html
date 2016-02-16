@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
   <title>
@@ -20,40 +22,63 @@
 
 
   <header>
-  <h1>Connexion</h1>
-  <form id="login">
-    <div class="session">
-      <label name="email">Adresse e-mail</label>
-      <input type="email" name="email" />
-      <input type="checkbox" name="session" value="sessionYes">
 
+
+
+    <div class="mod1 row">
+      <div class="col-xs-4">
+      </div>
+
+      <div class="col-xs-4">
+        <h1>Connexion</h1>
+        <form id="login">
+          <div class="session">
+            <label name="email">Adresse e-mail</label>
+            <input type="email" name="email" />
+          </div>
+
+
+
+
+          <div class="motPasse">
+            <label name="password">Mot de passe</label>
+            <input type="password" name="password" />
+            <a href="#">Mot de passe oublié ?</a>
+          </div>
+          <div class="button">
+            <input type="submit" name="loginOK" value="connexion" />
+          </div>
+        </form>
+      </div>
+
+      <div class="col-xs-4">
+      </div>
     </div>
-    <div class="motPasse">
-      <label name="password">Mot de passe</label>
-      <input type="password" name="password" />
-      <a href="#">Mot de passe oublié ?</a>
+
+
+
+  </header>
+
+  <div class="gauche">
+
+  </div>
+
+  <div class="mod1 row">
+    <div class="col-xs-12">
+      <div class="droite">
+        <h2>Inscription</h2>
+        <form id="register">
+          <input type="text" name="prenom" placeholder="Prénom" />
+          <input type="text" name="nom" placeholder="Nom" />
+          <input type="email" name="emailRegister" placeholder="Adresse e-mail" />
+          <input type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" />
+          <input type="password" name="password" placeholder="Mot de passe" />
+          <input type="submit" name="registerOK" value="Inscription" />
+      </div>
     </div>
-    <div class="button">
-      <input type="submit" name="loginOK" value="connexion" />
-    </div>
-  </form>
-</header>
-<div class="gauche">
+    </form>
+  </div>
 
-</div>
-<div class="droite">
-  <h2>Inscription</h2>
-  <form id="register">
-    <input type="text" name="prenom" placeholder="Prénom" />
-    <input type="text" name="nom" placeholder="Nom" />
-    <input type="email" name="emailRegister" placeholder="Adresse e-mail" />
-    <input type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" />
-    <input type="password" name="password" placeholder="Mot de passe" />
-    <input type="submit" name="registerOK" value="Inscription" />
-
-
-  </form>
-</div>
 </body>
 
 </html>
