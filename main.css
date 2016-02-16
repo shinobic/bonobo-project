@@ -9,8 +9,6 @@ body {
   height: 100%;
   color: black;
   background-color: grey;
-  list-style-type: none;
-  text-decoration: none;
 }
 
 header{background-color: pink;}
@@ -23,10 +21,6 @@ header{background-color: pink;}
   padding: 0px;
   margin: 0px;
   top: 0;
-}
-
-.middle {
-
 }
 
 .container{
@@ -80,6 +74,28 @@ margin-right: -25.7%;
   margin: 0px;
   margin-top: 10%;
 }
+
+#register ul li, #login ul li{
+  list-style-type: none;
+  text-decoration: none;
+  border-radius: 3px;
+  text-align: center;
+}
+
+#register ul li input:active, #login ul li input:active{
+  background-color: yellow;
+  border-bottom: black solid 3px;
+  border-left: black solid 3px;
+  border-top: black solid 3px;
+  border-right: black solid 3px;
+
+}
+
+.halfinput{
+  width:50%;
+}
+
+
 
 .clearfix{
   clear: both;
