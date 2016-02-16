@@ -8,7 +8,7 @@ body, html {
   height: 100%;
   color: black;
   background-color: grey;
-  position: absolute;
+  position: relative;
   font-family: arial;
 }
 
@@ -19,7 +19,6 @@ header{
 
 .main{
   height:auto;
-
   border-radius: 25px 0 25px 0;
   margin: 5% 0;
 }
@@ -29,12 +28,11 @@ h1{
 }
 
 .navbar {
-  line-height: 5vh;
+  line-height: 6vh;
   /*background: #fff;*/
   background-color: green;
   padding: 0px;
   margin: 0px;
-
 }
 
 .navbar ul{
@@ -43,9 +41,21 @@ h1{
   margin-right: 3%;
 }
 
+.navbar ul li a{
+  color:white;
+}
+
+.navbar ul li a:hover{
+  color:gold;
+  background-color: white;
+  border-radius: 8px 0;
+  padding: 3px;
+
+}
+
 .navbar ul li{
   display: inline;
-  line-height: 5vh;
+  line-height: 6vh;
 }
 
 .container{
@@ -62,10 +72,12 @@ h1{
 
 .gauche{
   float:left;
+  margin-bottom: 3%;
 }
 
 .droite{
   float:right;
+  margin-bottom: 3%;
 }
 
 /*blocs de menu inscription / connexion*/
@@ -73,14 +85,15 @@ h1{
   background-color: rgba(255, 255, 255, 0.4);
   border: white solid 2px;
   margin: auto;
-  margin-left: 5%;
+  /*margin-left: 5%;*/
   padding: 5%;
   border-radius: 15px;
 }
 #register h2, #login h2{
-  margin: auto;
+  /*margin: auto;
   margin-left: 5%;
-  padding: 5%;
+  padding: 5%;*/
+  text-align: center;
 }
 
 
@@ -93,25 +106,40 @@ h1{
   margin-bottom: 2%;
 }
 
+#register ul li input:focus, #login ul li input:focus{
+  background-color: orange;
+}
+
 #register ul li input:active, #login ul li input:active{
-  background-color: yellow;
+  background-color: blue;
   border-bottom: black solid 3px;
   border-left: black solid 3px;
   border-top: #ccc solid 3px;
   border-right: #ccc solid 3px;
 }
 
+
+
 .button{
   padding: 4px;
   box-sizing: border-box;
-  border-radius: 3px;
+  border-radius: 9px;
   background-color: rgba(0, 200, 200, 0.7);
+}
+
+.button:hover{
+  background-color: white;
+  color:gold;
+}
+
+.clearfix{
+  clear: both;
 }
 
 footer{
   height: 6vh;
-  bottom:0;
   position:absolute;
+  bottom:0;
   margin: auto;
   text-align: center;
   background-color: blue;
@@ -123,6 +151,9 @@ footer ul li{
   line-height: 6vh;
 }
 
-.clearfix{
-  clear: both;
+footer ul li a img{
+  border-radius: 50px;
+  height:4vh;
+  background-color: red;
+  border:0;
 }
