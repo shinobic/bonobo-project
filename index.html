@@ -3,83 +3,95 @@
   <title>Mon Tweet!</title>
 
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" type="text/css" href="main.css" />
 
   <!-- CDN JQuery -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <!-- Link javascript -->
   <script src="script.js"></script>
-
 
 </head>
 
 <body>
 
+  <div class="container">
+    <div class="row">
+    <!-- <div class="col-lg-8 col-md-8 col-sm-8 col-xs-10"> -->
 
   <header>
     <h1>Bonobo Tweet</h1>
-    <div class="navbar">
+    <div class="navbar"class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <ul>
-        <li>item1</li>
+        <li><a href="">item1</a></li>
+        <li><a href="">item2</a></li>
       </ul>
     </div>
   </header>
 
-  <div class"container">
-    <div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-10">
-
-
+  <div class="main">
 
     <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 gauche">
-      <h2>Connexion</h2>
+
       <form id="login">
+        <h2>Connexion</h2>
         <ul>
         <li><div class="session">
           <label name="email"></label>
           <input type="email" name="email" placeholder="Adresse e-mail" />
-        </div></li>
-        <div class="motPasse">
+        </div>
+      </li>
+        <!-- <div class="motPasse"> -->
           <li><label name="password"></label>
-          <input type="password" name="pass" placeholder="Mot de pass" /></li>
-          <li><a href="#">Mot de passe oublié ?</a>
-        </div></li>
-        <li><div class="button">
-          <input type="submit" name="loginOK" value="connexion" />
+          <input type="password" name="pass" placeholder="Mot de passe" /></li>
+          <li><a href="#">Mot de passe oublié ?</a></li>
+        <!-- </div> -->
+        <li><div>
+          <input class="button" type="submit" name="loginOK" value="connexion" />
         </div></li>
       </ul>
       </form>
     </section>
 
     <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 droite">
-      <h2>Inscription</h2>
+
       <form id="register">
+        <h2>Inscription</h2>
         <ul>
           <li><input id="prenom" type="text" name="pseudo" placeholder="Prénom" /></li>
           <li><input type="email" name="emailRegister" placeholder="Adresse e-mail" /></li>
           <li><input id="emailRegisterConfirme" type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" /></li>
           <li><input id="" type="password" name="password" placeholder="Mot de passe" /></li>
-          <li><input type="submit" name="registerOK" value="Inscription" /></li>
+          <li><input class="button" type="submit" name="registerOK" value="Inscription" /></li>
         </ul>
-
       </form>
     </section>
 
     <!-- rétablie l'effet du float -->
     <div class="clearfix"></div>
   </div>
-  </div>
+
+
+
+
+  <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <ul>
+      <li><a href=""><img src="" alt="Logo Twitter" />Like</il>
+      <li><a href=""><img src="" alt="Logo Facebook" />Like</il>
+      <li></li>
+    </ul>
+  </footer>
+</div>
 </div>
 
-
 </body>
-
 </html>
