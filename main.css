@@ -6,7 +6,6 @@
 body, html {
   width:100%;
   height: 100%;
-  color: black;
   background-color: #ccc;
   position: relative;
   font-family: arial;
@@ -16,7 +15,14 @@ header{
   background-color: black;
   background:-webkit-gradient(linear, 67% 100%, 10% 17%, from(#21292F), to(#110B10))
   top: 0;
-  position: relative;
+
+  /*dégradés du bloc*/
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1c1c1c+0,595959+16,666666+25,474747+32,474747+32,2c2c2c+37,000000+61,111111+71,2b2b2b+76,1c1c1c+81,1c1c1c+88,131313+100 */
+  background: rgb(28,28,28); /* Old browsers */
+  background: -moz-linear-gradient(45deg,  rgba(28,28,28,1) 0%, rgba(89,89,89,1) 16%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 32%, rgba(71,71,71,1) 32%, rgba(44,44,44,1) 37%, rgba(0,0,0,1) 61%, rgba(17,17,17,1) 71%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 81%, rgba(28,28,28,1) 88%, rgba(19,19,19,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  rgba(28,28,28,1) 0%,rgba(89,89,89,1) 16%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 32%,rgba(71,71,71,1) 32%,rgba(44,44,44,1) 37%,rgba(0,0,0,1) 61%,rgba(17,17,17,1) 71%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 81%,rgba(28,28,28,1) 88%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  rgba(28,28,28,1) 0%,rgba(89,89,89,1) 16%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 32%,rgba(71,71,71,1) 32%,rgba(44,44,44,1) 37%,rgba(0,0,0,1) 61%,rgba(17,17,17,1) 71%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 81%,rgba(28,28,28,1) 88%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1c1c', endColorstr='#131313',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 /*logo du header*/
@@ -29,16 +35,18 @@ header{
   font-size: 20px;
   text-shadow: #ccc;
 }
+
 /*effet 3D pour le logo*/
 .Three-Dee{
+  z-index: 10;
 font-family: ABeeZee ;
 line-height: 1em;
 color: undefined;
 font-size: 30px;
 text-shadow:0px 0px 0 rgb(222,222,222),-1px 1px 0 rgb(199,199,199),-2px 2px 0 rgb(176,176,176),-3px 3px 0 rgb(153,153,153),-4px 4px 0 rgb(130,130,130),-5px 5px 0 rgb(107,107,107), -6px 6px 0 rgb(84,84,84),-7px 7px 6px rgba(0,0,0,0.15),-7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
--webkit-transform: rotate(348deg);
--moz-transform: rotate(348deg);
--o-transform: rotate(348deg);
+-webkit-transform: rotate(358deg);
+-moz-transform: rotate(358deg);
+-o-transform: rotate(358deg);
 writing-mode: lr-tb;
 }
 
@@ -52,32 +60,36 @@ h1, h2{
   font-weight: bold;
 }
 
-
 .navbar {
-  line-height: 6vh;
+  /*line-height: 6vh;*/
   /*background: #fff;*/
-  background-color: rgba(0, 0, 0, 0.6);;
-  padding: 0px;
-  margin: 0px;
+  background-color: rgba(0, 0, 0, 0.2);;
+  /*padding: 2%;*/
+  line-height: 6%;
+  border-radius: solid grey 2px;
 }
 
 .navbar ul{
   position: absolute;
-  right:2%;
+  right:3%;
   /*margin-right: 3%;*/
+}
+
+.navbar ul li{
+  /*display: inline;*/
+  float: left;
+  line-height: 3vh;
+  border-right: 2px grey groove;
+  padding-right:2%;
 }
 
 .navbar ul li a{
   color:white;
   margin-left: 2%;
-  width: 100%;
-
+  /*width: 100%;*/
 }
 
 .navbar ul li a:hover{
-  color:white;
-  /*background-color: gold;*/
-  /*border-radius: 8px 0;*/
   /*padding: 3px;*/
   text-decoration: underline;
   border-bottom: 3px white solid;
@@ -85,10 +97,6 @@ h1, h2{
 
 }
 
-.navbar ul li{
-  display: inline;
-  line-height: 6vh;
-}
 
 .container{
   height: 100%;
@@ -110,8 +118,9 @@ h1, h2{
   border-radius: 25px 0 25px 0;
   margin: 5% 2%;
   position: relative;
-  padding: 2%;
-  background-color: #222;
+  padding: 4%;
+  background-color: rgba(222, 222, 222, 0.5);
+
 }
 
 /*.gauche, .droite{
@@ -155,7 +164,8 @@ h1, h2{
 }
 
 #register ul li input:focus, #login ul li input:focus{
-  background-color: orange;
+  background-color: black;
+  color: white
 }
 
 #register ul li input:active, #login ul li input:active{
@@ -164,6 +174,8 @@ h1, h2{
   border-left: black solid 3px;
   border-top: #ccc solid 3px;
   border-right: #ccc solid 3px;
+
+  background-image:url(img/wall_b.jpg);
 }
 
 
@@ -204,6 +216,24 @@ footer ul li{
 footer ul li a img{
   border-radius: 50px;
   height:4vh;
+  width: 4vh;
   background-color: red;
   border:0;
+}
+
+footer ul li a:hover{
+  text-decoration: none;
+}
+
+
+
+
+
+/*__________________Style de Tweets_____________________________*/
+
+
+#scene3D{
+  width:300px;
+height:300px;
+  perspective:500px;
 }
