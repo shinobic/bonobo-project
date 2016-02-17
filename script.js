@@ -20,57 +20,37 @@ $(document).ready(function() {
         data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
         success: function(response) { // Je récupère la réponse du fichier PHP
           alert(response); // J'affiche cette réponse
+          //redirection vers la page des tweets
+          var href = 'tweets.html';
+          $(location).attr('href','tweets.html?pseudo=' + pseudo);
+        },
+        error : function(resultat, statut, erreur){
+          //traite l'erreur
+
         }
       });
     }
   });
+
   $("#login").on("submit", function(e) {
-    //e.preventDefault();
+    e.preventDefault();
     //requequette serveur pour le log
+    var $this = $(this); // L'objet jQuery du formulaire
+    var pseudo = 'Sdz';
     $.ajax({
-       url : 'login.php' // La ressource ciblée
-    });
-  });
-  $("#logoff").on("submit", function(e) {
-    //e.preventDefault();
-    //requequette serveur pour le délog
-    $.ajax({
-       url : 'logoff.php' // La ressource ciblée
-    });
-  });
-  $("#unregister").on("submit", function(e) {
-    //e.preventDefault();
-    //requequette serveur pour la désinscription
-    $.ajax({
-       url : 'unregister.php' // La ressource ciblée
-    });
-  });
-  $("#tweet").on("submit", function(e) {
-    //e.preventDefault();
-    //requequette serveur pour le tweet
-    $.ajax({
-       url : 'tweet.php' // La ressource ciblée
-    });
-  });
-  $("#tweetoff").on("submit", function(e) {
-    //e.preventDefault();
-    //requequette serveur pour le délog
-    $.ajax({
-       url : 'tweetoff.php' // La ressource ciblée
-    });
-  });
-  $("#like").on("submit", function(e) {
-    //e.preventDefault();
-    //requequette serveur pour le like
-    $.ajax({
-       url : 'like.php' // La ressource ciblée
-    });
-  });
-  $("#retweet").on("submit", function(e) {
-    //e.preventDefault();
-    //requequette serveur pour le délog
-    $.ajax({
-       url : 'retweet.php' // La ressource ciblée
+      url : 'http://localhost/bonobo-server/login.php', // La ressource ciblée
+      type: "POST", // La méthode indiquée dans le formulaire (get ou post)
+      data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
+      success: function(response) { // Je récupère la réponse du fichier PHP
+        alert(response); // J'affiche cette réponse
+
+        var href = 'tweets.html';
+        $(location).attr('href','tweets.html?pseudo=' + pseudo);
+      },
+      error : function(resultat, statut, erreur){
+         //traite l'erreur
+
+      }
     });
   });
 })
