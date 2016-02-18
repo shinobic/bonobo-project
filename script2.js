@@ -25,7 +25,7 @@ $(document).ready(function() {
 
   var texte = $("#loginame").text();
   $("#loginame").text(texte + " " + sVar);
-  //requequette serveur pour recevoirs les tweets
+  //requete serveur pour recevoirs les tweets
   $.ajax({
     dataType: "json",
     url : 'http://localhost/bonobo-server/tweets.php?action=query', // La ressource ciblée
@@ -37,48 +37,73 @@ $(document).ready(function() {
     },
     error : function(resultat, statut, erreur){
       //traite l'erreur
-
+      alert(erreur);
     }
   });
 
-  $("#logoff").on("submit", function(e) {
+  $('#postweet').on("keypress", function(e) {
+    if(e.which == 13) {
+      var val = $(this).val();
+      //requete serveur pour poster le tweet
+      var $this = $(this); // L'objet jQuery de l'input
+      this.value = '';
+      $.ajax({
+      url : 'http://localhost/bonobo-server/postweet.php', // La ressource ciblée
+      type: "POST", // La méthode indiquée dans le formulaire (get ou post)
+      data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans l'input)
+      success: function(response) { // Je récupère la réponse du fichier PHP
+        //alert(response); // J'affiche cette réponse
+          //good on peut afficher le tweet
+          $('.thetweets').prepend('<p>' + sVar + " " + "41" + " " + val + '</p>');
+        },
+        error : function(resultat, statut, erreur){
+          //traite l'erreur
+          alert(erreur);
+        }
+      });
+    }
+  });
+
+  $(".logoff").on("click", function(e) {
     //e.preventDefault();
-    //requequette serveur pour le délog
+    //requete serveur pour le délog
     $.ajax({
-       url : 'logoff.php' // La ressource ciblée
+       url : 'http://localhost/bonobo-server/logoff.php?action=logoff', // La ressource ciblée
+       success: function(response) { // Je récupère la réponse du fichier PHP
+         alert(response); // J'affiche cette réponse
+
+       },
+       error : function(resultat, statut, erreur){
+         //traite l'erreur
+      //   alert(erreur);
+       }
     });
   });
+
   $("#unregister").on("submit", function(e) {
     //e.preventDefault();
-    //requequette serveur pour la désinscription
+    //requete serveur pour la désinscription
     $.ajax({
        url : 'unregister.php' // La ressource ciblée
     });
   });
-  $("#posttweet").on("submit", function(e) {
-    //e.preventDefault();
-    //requequette serveur pour poster le tweet
-    $.ajax({
-       url : 'tweet.php' // La ressource ciblée
-    });
-  });
   $("#tweetoff").on("submit", function(e) {
     //e.preventDefault();
-    //requequette serveur pour supprimer son tweet
+    //requete serveur pour supprimer son tweet
     $.ajax({
        url : 'tweetoff.php' // La ressource ciblée
     });
   });
   $("#like").on("submit", function(e) {
     //e.preventDefault();
-    //requequette serveur pour le like
+    //requete serveur pour le like
     $.ajax({
        url : 'like.php' // La ressource ciblée
     });
   });
   $("#retweet").on("submit", function(e) {
     //e.preventDefault();
-    //requequette serveur pour le délog
+    //requete serveur pour le délog
     $.ajax({
        url : 'retweet.php' // La ressource ciblée
     });
