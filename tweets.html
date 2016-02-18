@@ -1,21 +1,74 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Mes Tweets!</title>
 
 
-  <!-- CDN JQuery -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-  <!-- Link javascript -->
-  <script src="script2.js"></script>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="main.css" />
+
+<!-- CDN JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- Link javascript -->
+<script src="script.js"></script>
+
+<script src="js/comments.js"></script>
+
+<!-- link generateur de text 3D -->
+<link href='http://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+
+<!-- media queries pour mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 </head>
 
 <body>
-  <span id="loginame">Bienvenue au bonobo :</span><input class="logoff" type="submit" name="logoff" value="Déconnexion" />
-  <div class="thetweets"></div>
-  <input id="postweet" type="text" name="post" placeholder="Poste moi" />
+  <div id="page">
+
+    <div class="box shadow">
+
+    </div>
+    <div class="comments">
+      <?php
+      	foreach ((array) comments($page_id) as $comment) {
+      ?>
+        <div class="comment shadow effect">
+          <p class="left tip" title="<?php echo $comment['username'];?> Said">
+            <img class="avatar" src="<?php echo get_gravatar($comment['email'],40);?>" />
+          </p>
+          <p class="body right">
+              <div class="details small">
+                <span class="blue">
+                </span> · <a class="red" href="#" onclick="$(this).delete_comment(<?php echo $comment['id'];?>); return false;">Remove</a>
+              </div>
+          </p>
+
+        </div>
+    </div>
+    <div class="add_comment">
+      <div class="write shadow comment">
+        <p class="left">
+          <img class="avatar" src="#" />
+        </p>
+        <p class="textarea right">
+          <textarea class="left" cols="40" rows="5"></textarea>
+          <input class="left" value="SEND" type="submit" />
+        </p>
+      </div>
+      <a onclick="$(this).add_comment(<?php echo $page_id;?>);return false;" class="right effect shadow" href="#">Add Comment</a>
+    </div>
+  </div>
 </body>
+
 </html>

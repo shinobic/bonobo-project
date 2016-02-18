@@ -2,10 +2,10 @@ $(document).ready(function() {
   var sVar = "pseudo";
   sVar = window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(sVar).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1");
   //pas d'acces direct si no parameters
-  if(sVar === ''){
+  /*if(sVar === ''){
     var href = 'index.html';
     $(location).attr('href', 'index.html');
-  }
+  }*/
   //requete de connexion pour être sûr que le user existe
   $.ajax({
 /*    url: 'http://localhost/bonobo-server/login.php', // Le nom du fichier indiqué dans le formulaire
