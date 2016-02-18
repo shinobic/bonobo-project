@@ -23,6 +23,9 @@
   <!-- link generateur de text 3D -->
   <link href='http://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
 
+  <!-- media queries pour mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 </head>
 
 <body>
@@ -43,9 +46,18 @@
     </div>
 
 
-    <div id="logo">
-      <p class="Three-Dee">MYB.JR</p>
-    </div>
+    <!-- <div id="logo">
+       <p class="Three-Dee">MYB.JR</p>
+    </div> -->
+
+        <img src="img/logoMYBJR-big_b.png" alt="Logo lien Twitter" />
+
+<!--
+    <div id="stage" style="background: rgba(0,0,0,0.5);">
+      <p id="spinner" style="background: rgba(0,0,0,0.5); text-align: center; color: #fff;">Stop, I'm getting dizzy!</p>
+    </div> -->
+
+
   </header>
 
   <div class="main">
@@ -55,14 +67,17 @@
       <form id="login">
         <h2>Connexion</h2>
         <ul>
-        <li><div class="session">
-          <label name="email"></label>
-          <input type="email" name="email" placeholder="Adresse e-mail" />
-        </div>
-      </li>
+        <li>
+          <div class="session">
+            <label name="email"></label>
+            <input type="email" name="email" placeholder="Adresse e-mail" />
+          </div>
+        </li>
         <!-- <div class="motPasse"> -->
-          <li><label name="password"></label>
-          <input type="password" name="pass" placeholder="Mot de passe" /></li>
+          <li>
+            <label name="password"></label>
+            <input type="password" name="pass" placeholder="Mot de passe" />
+          </li>
           <li><a href="#">Mot de passe oublié ?</a></li>
         <!-- </div> -->
         <li><div>
@@ -70,6 +85,7 @@
         </div></li>
       </ul>
       </form>
+      <div class="clearfix"></div>
     </section>
 
     <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 droite">
@@ -84,6 +100,7 @@
           <li><label for="submit"><input class="button" type="submit" name="registerOK" value="Inscription" /></li>
         </ul>
       </form>
+      <div class="clearfix"></div>
     </section>
 
     <!-- rétablie l'effet du float -->
@@ -94,11 +111,12 @@
 
   <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <ul>
-      <li class=""><a href=""><img src="img/logo_f.jpg" alt="Logo lien Twitter"></il>
-      <li class=""><a href=""><img src="img/logo_mb.jpg" alt="Logo lien Facebook" /></il>
+      <li class="btntwitter"><a href="#"><img src="img/logo_f.png" alt="Logo lien Twitter" /></li>
+      <li class="btnfacebook"><a href="#"><img src="img/logo_md_a.jpg" alt="Logo lien Facebook" /></li>
       <li></li>
     </ul>
   </footer>
+
 </div>
 </div>
 
