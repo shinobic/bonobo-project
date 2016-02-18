@@ -6,7 +6,7 @@
 body {
   width:100%;
   height: 98%;
-  background-color: #ccc;
+  background-color: black;
   position: absolute;
   font-family: arial;
 
@@ -78,7 +78,7 @@ h1, h2{
 .navbar {
   /*line-height: 6vh;*/
   /*background: #fff;*/
-  background-color: rgba(0, 0, 0, 0.2);;
+  background-color: rgba(0, 0, 0, 0.8);;
   /*padding: 2%;*/
   line-height: 6%;
   border-radius: solid grey 2px;
@@ -127,14 +127,7 @@ h1, h2{
   background-size: contain;
 }
 
-.main{
-  border: solid #333 2px;
-  border-radius: 25px 0 25px 0;
-  margin: 5% 2%;
-  padding: 4%;
-  background-color: rgba(222, 222, 222, 0.5);
 
-}
 
 .gauche{
   float:left;
@@ -212,7 +205,7 @@ footer{
   bottom:0;
   margin: auto;
   text-align: center;
-  background-color: rgba(20, 20, 20, 0.4);
+  background-color: rgba(20, 20, 20, 1);
   display:block;
 }
 
@@ -246,10 +239,3 @@ footer ul li a:hover{
 
 
 /*__________________Style de Tweets_____________________________*/
-
-
-#scene3D{
-  width:300px;
-height:300px;
-  perspective:500px;
-}
