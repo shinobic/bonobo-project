@@ -1,3 +1,4 @@
+
 *{
   /*margin: 0;*/
   padding : 0;
@@ -107,6 +108,7 @@ h1, h2{
   min-width: 40%;
   box-sizing: border-box;
   margin-bottom: 2vh;
+  position: relative;
 }
 #register h2, #login h2{
   text-align: center;
@@ -156,6 +158,8 @@ h1, h2{
   color:gold;
 }
 
+form{clear:both;}
+
 .clearfix{
   clear: both;
   position: relative;
@@ -163,7 +167,7 @@ h1, h2{
 
 footer{
   line-height: 6vh;
-  position:absolute;
+  position:relative;
   bottom:0;
   text-align: center;
   background-color: rgba(20, 20, 20, 1);
