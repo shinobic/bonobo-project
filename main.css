@@ -76,6 +76,7 @@ h1, h2{
   border-radius:16px;
   background-color: #444;
   position: relative;
+  /*image de background*/
   background-image:url(img/background.jpg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -84,7 +85,7 @@ h1, h2{
 }
 
 .main{
-  height:100vh;
+  height:100%;
   margin: auto;
   position: relative;
 }
