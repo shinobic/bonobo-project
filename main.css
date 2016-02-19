@@ -80,28 +80,28 @@ h1, h2{
   /*background: #fff;*/
   background-color: rgba(0, 0, 0, 0.8);;
   /*padding: 2%;*/
-  line-height: 6%;
+
   border-radius: solid grey 2px;
 }
 
 .navbar ul{
   position: absolute;
   right:2%;
-  box-sizing: border-box;
+
 }
 
 .navbar ul li{
   display: inline-block;
-  float: left;
   line-height: 4vh;
   border-right: 2px grey groove;
   padding:2% 2%;
+
   box-sizing: border-box;
 }
 
 .navbar ul li a{
   color:white;
-  margin-left: 2%;
+
 }
 
 .navbar ul li a:hover{
