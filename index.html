@@ -27,8 +27,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!--  The jquery.pageslide.css stylesheet has the class that you'll need on your page -->
-  <link rel="stylesheet" type="text/css" href="../jquery.pageslide.css" />
-
+  <link rel="stylesheet" type="text/css" href="jquery.pageslide.css" />
 
 </head>
 
@@ -36,129 +35,101 @@
 
   <div class="container">
     <div class="row">
-    <!-- <div class="col-lg-8 col-md-8 col-sm-8 col-xs-10"> -->
-
   <header>
-
-    <!-- <div id="logo">
-       <p class="Three-Dee">MYB.JR</p>
-    </div> -->
-
-        <img src="img/logoMYBJR-big_b.png" alt="Logo lien Twitter" />
-
-<!--
-
-
+    <img src="img/logoMYBJR-big_b.png" alt="Logo lien Twitter" />
+    <!--
     <div id="stage" style="background: rgba(0,0,0,0.5);">
       <p id="spinner" style="background: rgba(0,0,0,0.5); text-align: center; color: #fff;">Stop, I'm getting dizzy!</p>
     </div> -->
 
-        <!-- navbar à paufiné -->
-        <!-- bouton pour mboile -->
-       <nav class="navbar navbar-inverse  navbar-fixed-top" role="banner">
-         <div class="container-fluid">
-           <div class="navbar-header">
-             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-             </button>
+    <!-- navbar à paufiné -->
+   <nav class="navbar navbar-inverse  navbar-fixed-top" role="banner">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+           <span class="sr-only">Toggle navigation</span><!--Toggle navigation -->
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
 
-           </div>
+       </div>
 
 
-        <a href="#modal" class="second">Link text</a>
-        <div id="modal" style="display:none">
-            <h2>Modal</h2>
-            <a href="javascript:$.pageslide.close()">Close</a>
-        </div>
-        <script>
-            $(".second").pageslide({ direction: "left", modal: true });
-        </script>
+       <div class="collapse navbar-collapse navbar-right"> <!--id content dans div-->
+         <h1><a href="#nav"></a><!--MOVE YOUR BONOBO ! --></h1> <!--class open dans a-->
+         <ul id="nav" class="nav navbar-nav">
+           <li><a href="#home.html">Acceuil</a></li>
+           <li><a href="#aboutus.html">Présentation</a></li>
+           <li><a href="#mypage.html">Mon compte Bonobo</a></li>
+           <li><a href="#confidential.html">Confidentialité</a></li>
+           <li><a href="#logoff">Me déconnecter</a></li>
+         </ul>
+       </div>
 
-               <div id="content" class="open collapse navbar-collapse navbar-right">
-                 <ul id="nav" class="nav navbar-nav">
-                   <li><a href="#home">Acceuil</a></li>
-                   <li><a href="#aboutus.html">Présentation</a></li>
-                   <li><a href="#mypage.html">Mon compte Bonobo</a></li>
-                   <li><a href="#confidential.html">Confidentialité</a></li>
-                   <li><a href="#logoff">Me déconnecter</a></li>
-                 </ul>
+     </div>
+     <!--/.container-->
+   </nav>
 
-               </div>
-
-             </div>
-             <!--/.container-->
-           </nav>
 
     <div class="clearfix"></div>
   </header>
 
 
 
-<!-- _______________MAIN_______________ -->
-  <div class="main">
-    <!-- ________BLOC____CONNEXION________ -->
-
-    <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 gauche">
-      <form id="login">
-        <h2>Connexion</h2>
-        <ul>
-          <!-- <div class="session"> -->
-        <li><label name="email"></label><input type="email" name="email" placeholder="Adresse e-mail" /></li>
-        <!-- <div class="motPasse"> -->
-        <li><label name="password"></label><input type="password" name="pass" placeholder="Mot de passe" /></li>
-        <li><a href="#">Mot de passe oublié ?</a></li>
-        <li><input class="button" type="submit" name="loginOK" value="connexion" /></li>
-      </ul>
-      </form>
-    </section>
-
-    <!-- __________BLOC INSCRIPTION______ -->
-
-    <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 droite">
-      <form id="register">
-        <h2>Inscription</h2>
-        <ul>
-          <li><label for="my_id"><input id="prenom" type="text" name="pseudo" placeholder="Prénom" /></label></li>
-          <li><label for="my_email"><input type="email" name="emailRegister" placeholder="Adresse e-mail" /></label></li>
-          <li><label for="my_email_confirmed"><input id="emailRegisterConfirme" type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" /></label></li>
-          <li><label for="my_password"><input id="" type="password" name="password" placeholder="Mot de passe" /></label></li>
-          <li><label for="submit"><input class="button" type="submit" name="registerOK" value="Inscription" /></li>
+  <!-- _______________MAIN_______________ -->
+    <div class="main">
+      <div class="bloc">
+      <!-- ________BLOC____CONNEXION________ -->
+      <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 gauche">
+        <form id="login">
+          <h2>Connexion</h2>
+          <ul>
+            <!-- <div class="session"> -->
+          <li><label name="email"></label><input type="email" name="email" placeholder="Adresse e-mail" /></li>
+          <!-- <div class="motPasse"> -->
+          <li><label name="password"></label><input type="password" name="pass" placeholder="Mot de passe" /></li>
+          <li><a href="#">Mot de passe oublié ?</a></li>
+          <li><input class="button" type="submit" name="loginOK" value="connexion" /></li>
         </ul>
-      </form>
-    </section>
+        </form>
+      </section>
+      <!-- __________BLOC INSCRIPTION______ -->
+      <section class="col-lg-6 col-md-6 col-sm-6 col-xs-12 droite">
+        <form id="register">
+          <h2>Inscription</h2>
+          <ul>
+            <li><label for="my_id"><input id="prenom" type="text" name="pseudo" placeholder="Prénom" /></label></li>
+            <li><label for="my_email"><input type="email" name="emailRegister" placeholder="Adresse e-mail" /></label></li>
+            <li><label for="my_email_confirmed"><input id="emailRegisterConfirme" type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" /></label></li>
+            <li><label for="my_password"><input id="" type="password" name="password" placeholder="Mot de passe" /></label></li>
+            <li><label for="submit"><input class="button" type="submit" name="registerOK" value="Inscription" /></li>
+          </ul>
+        </form>
 
-    <!-- rétablie l'effet du float -->
-    <!-- <div class="clearfix"></div> -->
+      </section>
+      <div class="clearfix"></div>
+    </div>
 
-  </div>
+        <!-- __________FOOTER_________ -->
+          <!-- <div class="row"> -->
+          <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <ul>
+              <li class="btntwitter"><a href="#"><img src="img/logo_f.png" alt="Logo lien Twitter" /></li>
+              <li class="btnfacebook"><a href="#"><img src="img/logo_md_a.jpg" alt="Logo lien Facebook" /></li>
+            </ul>
+          </footer>
 
-  <!-- _______________fermeture du MAIN__________ -->
-
-
-
-<!-- __________FOOTER_________ -->
-  <div class="row">
-  <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <ul>
-      <li class="btntwitter"><a href="#"><img src="img/logo_f.png" alt="Logo lien Twitter" /></li>
-      <li class="btnfacebook"><a href="#"><img src="img/logo_md_a.jpg" alt="Logo lien Facebook" /></li>
-      <li></li>
-    </ul>
-  </footer>
-  </div>
-<!-- ______fermeture du FOOTER_______ -->
-
-  </div>
-</div>
+        <!-- ______fermeture du FOOTER_______ -->
 
 
-<script src="../lib/jquery-1.7.1.min.js"></script>
-<script src="../jquery.pageslide.min.js"></script>
-<script>
-    $(".open").pageslide();
-</script>
+      <!-- _______________fermeture du MAIN__________ -->
+        </div>
+
+
+      </div>
+
+      </div>
+
 </body>
 </html>
