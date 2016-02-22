@@ -42,7 +42,6 @@ body {
     width: 100vh;*/
     position: relative;
     margin: auto;
-    margin-top: 20vh;
     text-align: center;
     padding: auto;
     /*margin-left: 20%;*/
@@ -244,8 +243,7 @@ form{clear:both;
 footer{
   line-height: 6vh;
   display: block;
-  position:relative;
-  margin-top: -20vh;
+  position:absolute;
   /*margin-top: 94vh;*/
   bottom:0;
   text-align: center;
