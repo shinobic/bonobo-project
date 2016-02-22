@@ -2,6 +2,7 @@
   padding: 0;
   z-index: 2;}
 
+
 body {
   width:100%;
   height:100%;
@@ -206,7 +207,7 @@ h1, h2{
   border-top: #ccc solid 3px;
   border-right: #ccc solid 3px;
 /*----------------------*/
-  background-image:url(img/m-eyes.gif);
+  background-image:url(../img/m-eyes.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 130% 200%;
@@ -270,8 +271,6 @@ footer a, footer a:hover, footer ul li a img{
   text-decoration: none;
 }
 
-a, a:visited {text-decoration: none;}
-a:hover {border-bottom-style: solid; }
 
 p { margin-bottom: 20px; }
 
