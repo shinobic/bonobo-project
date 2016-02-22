@@ -41,13 +41,9 @@ body {
     width: 100vh;*/
     position: relative;
     margin: auto;
-<<<<<<< HEAD
     margin-top: 20vh;
-    padding: inherit;
-=======
     text-align: center;
     padding: auto;
->>>>>>> 172f5a8ac0fce8fef311787953cceebf2daee2fa
     /*margin-left: 20%;*/
     /*height:96vh;*/
     z-index: 1;
@@ -248,6 +244,8 @@ footer{
   display: block;
   position:relative;
   margin-top: -20vh;
+  /*margin-top: 94vh;*/
+  bottom:0;
   text-align: center;
   background-color: rgba(20, 20, 20, 1);
   border-radius: 0 0 16px 16px;
