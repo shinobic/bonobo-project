@@ -15,7 +15,7 @@ $(document).ready(function() {
     } else {
     // Envoi de la requête HTTP en mode asynchrone
       $.ajax({
-        url: 'http://localhost/bonobo-server/suscribe.php', // Le nom du fichier indiqué dans le formulaire
+        url: 'http://localhost/bonobo-server/subscribe.php', // Le nom du fichier indiqué dans le formulaire
         type: "POST", // La méthode indiquée dans le formulaire (get ou post)
         data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
         success: function(response) { // Je récupère la réponse du fichier PHP
