@@ -22,6 +22,7 @@ body {
   background-color: #444;
   position: relative;
   margin: auto;
+  text-align: center;
   /*image de background*/
   background-image:url(../img/background.jpg);
   background-size: contain;
@@ -40,8 +41,13 @@ body {
     width: 100vh;*/
     position: relative;
     margin: auto;
+<<<<<<< HEAD
     margin-top: 20vh;
     padding: inherit;
+=======
+    text-align: center;
+    padding: auto;
+>>>>>>> 172f5a8ac0fce8fef311787953cceebf2daee2fa
     /*margin-left: 20%;*/
     /*height:96vh;*/
     z-index: 1;
@@ -148,9 +154,9 @@ h1, h2{
 /*blocs de menu inscription / connexion*/
 #register, #login, .comments, .add_comment{
   background-color: rgba(255, 255, 255, 0.7);
-  border: white solid 2px;
   position: relative;
   margin: auto;
+  text-align: center;
   padding: 5%;
   border-radius: 15px;
   text-align: center;
@@ -158,6 +164,7 @@ h1, h2{
   box-sizing: border-box;
   margin-bottom: 2vh;
   border: #ccc 3px solid;
+  clear: both;
 }
 
 #register h2, #login h2{
@@ -225,6 +232,7 @@ h1, h2{
 form{clear:both;
   position: relative;
   margin: auto;
+  text-align: center;
 /*width: 80%*/
 }
 /*_______________blocs formulaires______________*/
