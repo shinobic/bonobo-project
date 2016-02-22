@@ -15,7 +15,7 @@ $(document).ready(function() {
     } else {
     // Envoi de la requête HTTP en mode asynchrone
       $.ajax({
-        url: 'http://localhost/bonobo-server/register.php', // Le nom du fichier indiqué dans le formulaire
+        url: 'http://localhost/bonobo-server/suscribe.php', // Le nom du fichier indiqué dans le formulaire
         type: "POST", // La méthode indiquée dans le formulaire (get ou post)
         data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
         success: function(response) { // Je récupère la réponse du fichier PHP
@@ -26,7 +26,7 @@ $(document).ready(function() {
         },
         error : function(resultat, statut, erreur){
           //traite l'erreur
-
+          alert(resultat);
         }
       });
     }
@@ -38,18 +38,18 @@ $(document).ready(function() {
     var $this = $(this); // L'objet jQuery du formulaire
     var pseudo = 'Sdz';
     $.ajax({
-      url : 'http://localhost/bonobo-server/login.php', // La ressource ciblée
+      url : 'http://localhost/bonobo-server/connect.php', // La ressource ciblée
       type: "POST", // La méthode indiquée dans le formulaire (get ou post)
       data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
       success: function(response) { // Je récupère la réponse du fichier PHP
-        alert(response); // J'affiche cette réponse
+        //alert(response); // J'affiche cette réponse
 
         var href = 'tweets.html';
         $(location).attr('href','tweets.html?pseudo=' + pseudo);
       },
       error : function(resultat, statut, erreur){
-         //traite l'erreur
-
+        //traite l'erreur
+        alert(statut + " " + erreur);
       }
     });
   });
