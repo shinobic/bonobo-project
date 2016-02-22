@@ -2,10 +2,10 @@ $(document).ready(function() {
   var sVar = "pseudo";
   sVar = window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(sVar).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1");
   //pas d'acces direct si no parameters
-  /*if(sVar === ''){
+  if(sVar === ''){
     var href = 'index.html';
     $(location).attr('href', 'index.html');
-  }*/
+  }
   //requete de connexion pour être sûr que le user existe
   $.ajax({
 /*    url: 'http://localhost/bonobo-server/login.php', // Le nom du fichier indiqué dans le formulaire
@@ -41,7 +41,9 @@ $(document).ready(function() {
     }
   });
 
-  $('#postweet').on("keypress", function(e) {
+  //boucle events
+  function onTick() {
+  $('#postweet').off('keypress').on("keypress", function(e) {
     if(e.which == 13) {
       var val = $(this).val();
       //requete serveur pour poster le tweet
@@ -54,7 +56,7 @@ $(document).ready(function() {
       success: function(response) { // Je récupère la réponse du fichier PHP
         //alert(response); // J'affiche cette réponse
           //good on peut afficher le tweet
-          $('.thetweets').prepend('<p>' + sVar + " " + "41" + " " + val + '</p>');
+          $('.thetweets').prepend('<div class="pipo">' + '<p class="json">' + sVar + " " + "41" + " " + val + '</p> ' + '<i class="fa fa-times">' + '</div>');
         },
         error : function(resultat, statut, erreur){
           //traite l'erreur
@@ -65,35 +67,60 @@ $(document).ready(function() {
   });
 
   $(".logoff").on("click", function(e) {
-    //e.preventDefault();
     //requete serveur pour le délog
     $.ajax({
-       url : 'http://localhost/bonobo-server/logoff.php?action=logoff', // La ressource ciblée
-       success: function(response) { // Je récupère la réponse du fichier PHP
-         alert(response); // J'affiche cette réponse
-
-       },
-       error : function(resultat, statut, erreur){
+      url : 'http://localhost/bonobo-server/logoff.php?action=logoff', // La ressource ciblée
+      success: function(response) { // Je récupère la réponse du fichier PHP
+        alert(response); // J'affiche cette réponse
+        var href = 'index.html';
+        $(location).attr('href', 'index.html');
+      },
+      error : function(resultat, statut, erreur){
          //traite l'erreur
       //   alert(erreur);
-       }
+      }
     });
   });
 
-  $("#unregister").on("submit", function(e) {
-    //e.preventDefault();
+  $(".unregister").on("click", function(e) {
     //requete serveur pour la désinscription
     $.ajax({
-       url : 'unregister.php' // La ressource ciblée
+      url : 'http://localhost/bonobo-server/unregister.php?action=unregister', // La ressource ciblée
+      success: function(response) { // Je récupère la réponse du fichier PHP
+        alert(response); // J'affiche cette réponse
+        var href = 'index.html';
+        $(location).attr('href', 'index.html');
+      },
+      error : function(resultat, statut, erreur){
+        //traite l'erreur
+        alert(erreur);
+      }
     });
   });
-  $("#tweetoff").on("submit", function(e) {
+
+  //remove
+  $('.fa-times').off('click').on("click", function() {
+    alert('pioyf');
+    //requete serveur pour supprimer son tweet
+    $.ajax({
+      url : 'http://localhost/bonobo-server/tweetoff.php?action=delete', // La ressource ciblée
+      success: function(response) { // Je récupère la réponse du fichier PHP
+        alert(response); // J'affiche cette réponse
+      },
+        error : function(resultat, statut, erreur){
+        //traite l'erreur
+        //alert(erreur);
+      }
+    });
+  });
+
+  /*$("#tweetoff").on("submit", function(e) {
     //e.preventDefault();
     //requete serveur pour supprimer son tweet
     $.ajax({
        url : 'tweetoff.php' // La ressource ciblée
     });
-  });
+  });*/
   $("#like").on("submit", function(e) {
     //e.preventDefault();
     //requete serveur pour le like
@@ -108,4 +135,6 @@ $(document).ready(function() {
        url : 'retweet.php' // La ressource ciblée
     });
   });
+}
+  setInterval(onTick, 500);
 })

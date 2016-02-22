@@ -1,3 +1,4 @@
+
 *{
   /*margin: 0;*/
   padding : 0;
@@ -165,6 +166,8 @@ form{clear: both;}
   color:gold;
 }
 
+form{clear:both;}
+
 .clearfix{
   clear: both;
   position: relative;
@@ -172,7 +175,11 @@ form{clear: both;}
 
 footer{
   line-height: 6vh;
+<<<<<<< HEAD:css/main.css
   position: absolute;
+=======
+  position:relative;
+>>>>>>> 3aa5f5fb72ffeafda25d47da8c1b73058315969f:main.css
   bottom:0;
   text-align: center;
   background-color: rgba(20, 20, 20, 1);
