@@ -1,0 +1,317 @@
+
+        *{margin: 0;
+          padding: 0;
+          z-index: 2;}
+
+        body {
+          width:100%;
+          height:100%;
+          min-height: 95vh;
+          background-color: black;
+          /*position: absolute;*/
+          font: 14px/18px Arial, sans-serif;
+          /*color: #666;*/
+          -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+          -webkit-text-size-adjust: none;
+        }
+
+        .container{
+          height: 100vh;
+          width: 100%;
+          border:grey solid 2px;
+          border-radius:16px;
+          background-color: #444;
+          position: relative;
+          margin: auto;
+          /*image de background*/
+          background-image:url(../img/background.jpg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: auto 100%;
+          border: #666 3px solid;
+        }
+
+          .main{
+            height:92vh;
+            width: 100%;
+            display: block;
+            /*min-height:100%;
+            height:100vh;
+            width: 100vh;*/
+            position: relative;
+            margin: auto;
+            padding: inherit;
+            /*margin-left: 20%;*/
+            /*height:96vh;*/
+            z-index: 1;
+          }
+
+        header{
+          top: 0;
+          background-color: black;
+          background:-webkit-gradient(linear, 67% 100%, 10% 17%, from(#21292F), to(#110B10))
+
+          /*dégradés du bloc*/
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1c1c1c+0,595959+16,666666+25,474747+32,474747+32,2c2c2c+37,000000+61,111111+71,2b2b2b+76,1c1c1c+81,1c1c1c+88,131313+100 */
+          background: rgb(28,28,28); /* Old browsers */
+          background: -moz-linear-gradient(45deg,  rgba(28,28,28,1) 0%, rgba(89,89,89,1) 16%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 32%, rgba(71,71,71,1) 32%, rgba(44,44,44,1) 37%, rgba(0,0,0,1) 61%, rgba(17,17,17,1) 71%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 81%, rgba(28,28,28,1) 88%, rgba(19,19,19,1) 100%); /* FF3.6-15 */
+          background: linear-gradient(45deg,  rgba(28,28,28,1) 0%,rgba(89,89,89,1) 16%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 32%,rgba(71,71,71,1) 32%,rgba(44,44,44,1) 37%,rgba(0,0,0,1) 61%,rgba(17,17,17,1) 71%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 81%,rgba(28,28,28,1) 88%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(45deg,  rgba(28,28,28,1) 0%,rgba(89,89,89,1) 16%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 32%,rgba(71,71,71,1) 32%,rgba(44,44,44,1) 37%,rgba(0,0,0,1) 61%,rgba(17,17,17,1) 71%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 81%,rgba(28,28,28,1) 88%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1c1c', endColorstr='#131313',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+          border-radius:16px 16px 0 0;
+
+          margin-bottom: 2vh;
+          border-bottom:grey solid 2px;
+          height: 11vh;
+        }
+
+        /*---------------logo du header*/
+        header img{
+          position: relative;
+          float: left;
+          top:0;
+          left:3%;
+          padding:0.6%;
+          height: 11vh;
+          z-index: 50;
+          margin: auto;
+        }
+
+        /*logo dans la barre latéral menu sur mobiles*/
+        #nav #logomob{
+          position: relative;
+          float: left;
+          bottom:0;
+          opacity: 0.5;
+          left:3%;
+          padding:0.6%;
+          height: 13vh;
+          z-index: 50;
+          margin: auto;
+          margin-top:250px;
+          display: none;
+          }
+
+          /*barre de menu*/
+          #content {
+              width: 740px;
+              padding: 10px;
+              float: right;
+              /*margin-left: 20%;
+              margin-right: 5%;*/
+               /*border:green 5px solid;*/
+          }
+
+              ul#nav { padding-left: 0; list-style: none; width: 100%; font-family: arial; font-size: 15px; line-height: 3vh;}
+
+                  #content ul#nav li { float: left; text-align: center; }
+
+                  #content ul#nav a {
+                          display: block;
+                          color: #FFF;
+                          font-weight: bold;
+                          padding: 3px;
+                          border-right: 1px solid #666;
+                          margin:1vh;
+                  }
+
+          /*bouton d'affichage du menu sur portable*/
+          .open {
+              position: absolute;
+              display: none;
+              top:0;
+              float: right;
+              right: 0;
+              margin: 2%;
+              width: 50px;
+              height: 50px;
+              /*margin-left: 10px;*/
+              /*margin:auto 5% auto 0;*/
+              background: url(../img/menu.png) center center no-repeat;
+              -moz-border-radius: 8px;
+              -webkit-border-radius: 8px;
+              -border-radius: 8px;
+              box-shadow: inset 0 0 3px #000;
+              text-indent: -999999px;
+              border: 0;
+          }
+
+
+        h1, h2{
+          text-align: center;
+          font-weight: bold;
+        }
+
+/*_______________blocs formulaires______________*/
+
+        /*blocs de menu inscription / connexion*/
+        #register, #login, .comments, .add_comment{
+          background-color: rgba(255, 255, 255, 0.7);
+          border: white solid 2px;
+          position: relative;
+          margin: auto;
+          padding: 5%;
+          border-radius: 15px;
+          text-align: center;
+          /*min-width: 40%;*/
+          box-sizing: border-box;
+          margin-bottom: 2vh;
+          border: #ccc 3px solid;
+        }
+
+        #register h2, #login h2{
+          text-align: center;
+          margin:auto;
+          margin-bottom: 1vh;
+        }
+
+        #register ul li, #login ul li{
+          list-style-type: none;
+          text-decoration: none;
+          border-radius: 3px;
+          font-weight: bold;
+          margin: auto;
+          margin-bottom: 1vh;
+          text-align: center;
+          box-sizing: border-box;
+        }
+
+        /*champ de formualire*/
+        #register ul li input, #login ul li input{
+          min-width: 200px;
+          max-width: 80%;
+          margin: auto;
+          border-bottom: grey 3px solid;
+          border-left: #999 3px solid;
+          box-sizing: border-box;
+        }
+
+        /*champ de formualire clic maintenu*/
+        #register ul li input:focus, #login ul li input:focus{
+          background-color: black;
+          color: white;
+          box-sizing: border-box;
+        }
+
+        /*champ de formualire actif*/
+        #register ul li input:active, #login ul li input:active{
+          background-color: #333;
+          border-bottom: black solid 3px;
+          border-left: black solid 3px;
+          border-top: #ccc solid 3px;
+          border-right: #ccc solid 3px;
+        /*----------------------*/
+          background-image:url(img/m-eyes.gif);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 130% 200%;
+        }
+
+        /*boutons submit*/
+        .button{
+          padding: 4px;
+          box-sizing: border-box;
+          border-radius: 9px;
+          background-color: rgba(0, 0 ,0 , 0.7);
+          color:white;
+        }
+
+        .button:hover{
+          background-color: black;
+          color:gold;
+        }
+
+        form{clear:both;
+          position: relative;
+          margin: auto;
+        /*width: 80%*/
+      }
+/*_______________blocs formulaires______________*/
+
+
+        .clearfix{
+          clear: both;
+          position: relative;
+        }
+
+        footer{
+          line-height: 6vh;
+          display: block;
+          position:relative;
+          bottom:0;
+          text-align: center;
+          background-color: rgba(20, 20, 20, 1);
+          border-radius: 0 0 16px 16px;
+          border-top:grey solid 2px;
+        }
+
+        footer ul li{
+          display: inline;
+          margin-right: 2%;
+        }
+
+        footer ul li a img{
+          border-radius: 50px;
+          height:4vh;
+          width: 4vh;
+          background-color: grey;
+          z-index: 6;
+          border:grey solid 1px;
+        }
+
+        footer a, footer a:hover, footer ul li a img{
+          text-decoration: none;
+        }
+
+        a, a:visited {text-decoration: none;}
+        a:hover {border-bottom-style: solid; }
+
+        p { margin-bottom: 20px; }
+
+        /* Media Queries
+        *
+        * Note: Please don't base your responsive design off of this code. It is just here for demo purposes.
+        * Rather, grab yourself a copy of Ethan's book: http://www.abookapart.com/products/responsive-web-design
+        ================================================== */
+
+      @media only screen and (min-width: 1000px){
+        .container{background-size: 100%;}
+      }
+
+
+        /* Mobile and iPad Portrait */
+    	@media only screen and (max-width: 959px) {
+    	    #content { width: 748px; }
+          #nav #logo{display:none;}
+    	}
+
+    	/* Mobile Landscape and Portrait */
+    	@media only screen and (max-width: 767px) {
+    	    #content { width: 400px; }
+    	    #content h1 { font-size: 22px; line-height: 5vh; color: #FFF; padding: 10px; }
+    	    #content ul#nav { display: none; }
+    	    .open { display: block; }
+    	    #pageslide { width: 150px;
+            border-radius: 16px 0 0 16px;
+            position: absolute;
+          }
+    	        #pageslide #nav li { padding: 10px 0; border-bottom: 1px solid #333; }
+    	        #pageslide #nav li a { color: #FFF; border: none; }
+    	        #pageslide #nav li a:hover { text-decoration: none;
+                border-bottom: 3px white solid;
+                padding-bottom: 4px;
+                box-sizing: border-box;
+                border-radius: 0 0 3px 3px;}
+              #pageslide #nav li a:visited { color: #ccc; border: none; }
+                #nav #logomob{display: block;}
+                header img {overflow: hidden;
+                  text-indent: -999999px;
+                  display: none;}
+    	}
+
+    	/* Mobile Portrait */
+        @media only screen and (max-width: 479px) {
+            #content { width: 280px; }
+            #content h1 { font-size: 14px; }
+        }

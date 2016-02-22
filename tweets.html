@@ -1,74 +1,105 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mes Tweets!</title>
+    <meta charset="UTF-8">
+    <title>Mon T8r!</title>
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-<link rel="stylesheet" type="text/css" href="tweets.css" />
-
-<!-- CDN JQuery -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-<!-- Link javascript -->
-<script src="script.js"></script>
-
-<script src="js/comments.js"></script>
-
-<!-- link generateur de text 3D -->
-<link href='http://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
-
-<!-- media queries pour mobile -->
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  	<!--  The jquery.pageslide.css stylesheet has the class that you'll need on your page -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.pageslide.css" />
 
 </head>
-
 <body>
-  <div id="page">
+  <div id="page" class="container">
+    <div class="row">
 
-    <div class="box">
+  <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <img id="logo"  src="img/logoMYBJR-big_b.png" alt="Logo lien Twitter" />
 
+    <div id="content">
+        <!--<h1>--><a class="open" href="#nav">Menu</a><!--</h1>-->
+        <ul id="nav">
+          <li><a href="#home.html">Acceuil</a></li>
+          <li><a href="#aboutus.html">Présentation</a></li>
+          <li><a href="#mypage.html">Mon Bonobo</a></li>
+          <li><a href="#confidential.html">Confidentialité</a></li>
+          <li><a href="#logoff">Me déconnecter</a></li>
+          <li><img id="logomob"  src="img/logoMYBJR-big_b.png" alt="Logo lien Twitter" /></li>
+        </ul>
     </div>
-    <div class="comments">
-      <?php
-      	foreach ((array) comments($page_id) as $comment) {
-      ?>
-        <div class="comment shadow effect">
-          <p class="left tip" title="<?php echo $comment['username'];?> Said">
-            <img class="avatar" src="<?php echo get_gravatar($comment['email'],40);?>" />
-          </p>
-          <p class="body right">
-              <div class="details small">
-                <span class="blue">
-                </span> · <a class="red" href="#" onclick="$(this).delete_comment(<?php echo $comment['id'];?>); return false;">Remove</a>
+  </header>
+
+      <!-- _______________MAIN_______________ -->
+        <div class="main">
+
+          <!-- ________BLOC____CONNEXION________ -->
+          <section class="col-lg-7 col-md-7 col-sm-7 col-xs-10">
+
+            <div class="box">
+
+            </div>
+            <div class="comments">
+              <?php
+                foreach ((array) comments($page_id) as $comment) {
+              ?>
+                <div class="comment shadow effect">
+                  <p class="left tip" title="<?php echo $comment['username'];?> Said">
+                    <img class="avatar" src="<?php echo get_gravatar($comment['email'],40);?>" />
+                  </p>
+                  <p class="body right">
+                      <div class="details small">
+                        <span class="blue">
+                        </span> · <a class="red" href="#" onclick="$(this).delete_comment(<?php echo $comment['id'];?>); return false;">Remove</a>
+                      </div>
+                  </p>
+
+                </div>
+            </div>
+            <div class="add_comment">
+              <div class="write shadow comment">
+                <p class="left">
+                  <img class="avatar" src="#" />
+                </p>
+                <p class="textarea right">
+                  <textarea class="left" cols="40" rows="5"></textarea>
+                  <input class="left" value="SEND" type="submit" />
+                </p>
               </div>
-          </p>
+              <a onclick="$(this).add_comment(<?php echo $page_id;?>);return false;" class="right effect shadow" href="#">Add Comment</a>
+            </div>
 
-        </div>
-    </div>
-    <div class="add_comment">
-      <div class="write shadow comment">
-        <p class="left">
-          <img class="avatar" src="#" />
-        </p>
-        <p class="textarea right">
-          <textarea class="left" cols="40" rows="5"></textarea>
-          <input class="left" value="SEND" type="submit" />
-        </p>
-      </div>
-      <a onclick="$(this).add_comment(<?php echo $page_id;?>);return false;" class="right effect shadow" href="#">Add Comment</a>
-    </div>
-  </div>
+          </section>
+
+
+       </div> <!--fermeture du row -->
+
+       <!-- __________FOOTER_________ -->
+         <!-- <div class="row"> -->
+         <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+           <ul>
+             <li class="btntwitter"><a href="#"><img src="img/logo_f.png" alt="Logo lien Twitter" /></a></li>
+             <li class="btnfacebook"><a href="#"><img src="img/logo_md_a.jpg" alt="Logo lien Facebook" /></a></li>
+           </ul>
+         </footer>
+
+      </div> <!--fermeture de main -->
+
+     </div> <!--fermeture de container-->
+
+    <script src="lib/jquery-1.7.1.min.js"></script>
+    <script src="lib/jquery.pageslide.min.js"></script>
+    <script>
+        $(".open").pageslide();
+    </script>
 </body>
-
 </html>
