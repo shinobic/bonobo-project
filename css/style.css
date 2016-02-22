@@ -241,7 +241,8 @@ form{clear:both;
 footer{
   line-height: 6vh;
   display: block;
-  position:relative;
+  position:absolute;
+  /*margin-top: 94vh;*/
   bottom:0;
   text-align: center;
   background-color: rgba(20, 20, 20, 1);

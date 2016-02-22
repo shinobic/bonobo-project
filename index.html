@@ -37,45 +37,65 @@
         </ul>
     </div>
   </header>
+</div> <!-- ferme la row-->
+
 
       <!-- _______________MAIN_______________ -->
         <div class="main">
-          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0">
+          <div class="row">
+            <div class="col-sm-6 col-xs-10">
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-2">
+            </div>
+            <!-- ________BLOC____CONNEXION________ -->
+            <section class="col-lg-12 col-md-12 col-sm-12 col-xs-10">
+              <form id="login">
+                <h2>Je suis Bonobo !</h2>
+                <ul>
+                  <!-- <div class="session"> -->
+                  <li><label name="email"></label><input type="email" name="email" placeholder="Adresse e-mail" /></li>
+                  <!-- <div class="motPasse"> -->
+                  <li><label name="password"></label><input type="password" name="pass" placeholder="Mot de passe" /></li>
+                  <li><a href="#">Mot de passe oublié ?</a></li>
+                  <li><input class="button" type="submit" name="loginOK" value="connexion" /></li>
+                </ul>
+              </form>
+              <div class="col-sm-0 col-xs-2">
+              </div>
+            </section>
           </div>
-          <!-- ________BLOC____CONNEXION________ -->
-          <section class="col-lg-4 col-md-4 col-sm-4 col-xs-9">
-            <form id="login">
-              <h2>Je suis Bonobo !</h2>
-              <ul>
-                <!-- <div class="session"> -->
-                <li><label name="email"></label><input type="email" name="email" placeholder="Adresse e-mail" /></li>
-                <!-- <div class="motPasse"> -->
-                <li><label name="password"></label><input type="password" name="pass" placeholder="Mot de passe" /></li>
-                <li><a href="#">Mot de passe oublié ?</a></li>
-                <li><input class="button" type="submit" name="loginOK" value="connexion" /></li>
-              </ul>
-            </form>
-
-          </section>
-          <!-- __________BLOC INSCRIPTION______ -->
-          <section class="col-lg-4 col-md-4 col-sm-4 col-xs-9">
-            <form id="register">
-              <h2>Devenir Bonobo</h2>
-              <ul>
-                <li><label for="my_id"></label><input id="prenom" type="text" name="pseudo" placeholder="Prénom" /></li>
-                <li><label for="my_email"></label><input type="email" name="emailRegister" placeholder="Adresse e-mail" /></li>
-                <li><label for="my_email_confirmed"></label><input id="emailRegisterConfirme" type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" /></li>
-                <li><label for="my_password"></label><input id="" type="password" name="password" placeholder="Mot de passe" /></li>
-                <li><input class="button" type="submit" name="registerOK" value="Inscription" /></li>
-              </ul>
-            </form>
-          </section>
 
 
-       </div> <!--fermeture du row -->
+            <!-- __________BLOC INSCRIPTION______ -->
+            <div class="col-sm-6 col-xs-10">
+            <div class="col-sm-0 col-xs-2">
+            </div>
+            <section class="col-lg-12 col-md-12 col-sm-12 col-xs-10">
+              <form id="register">
+                <h2>Devenir Bonobo</h2>
+                <ul>
+                  <li><label for="my_id"></label><input id="prenom" type="text" name="pseudo" placeholder="Prénom" /></li>
+                  <li><label for="my_email"></label><input type="email" name="emailRegister" placeholder="Adresse e-mail" /></li>
+                  <li><label for="my_email_confirmed"></label><input id="emailRegisterConfirme" type="email" name="emailRegisterConfirme" placeholder="Confirmer l'adresse e-mail" /></li>
+                  <li><label for="my_password"></label><input id="" type="password" name="password" placeholder="Mot de passe" /></li>
+                  <li><input class="button" type="submit" name="registerOK" value="Inscription" /></li>
+                </ul>
+              </form>
+              <div class="col-sm-0 col-xs-2">
+              </div>
+            </section>
+          </div>
+
+           <!-- ajouter
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          </div>
+          pour centrer les col -->
+
+
+       </div> <!--fermeture du row main-->
+     </div> <!--fermeture du main-->
 
        <!-- __________FOOTER_________ -->
-         <!-- <div class="row"> -->
+         <div class="row">
          <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
            <ul>
              <li class="btntwitter"><a href="#"><img src="img/logo_f.png" alt="Logo lien Twitter" /></a></li>
@@ -83,7 +103,7 @@
            </ul>
          </footer>
 
-      </div> <!--fermeture de main -->
+       </div> <!--fermeture de row footer -->
 
      </div> <!--fermeture de container-->
 
