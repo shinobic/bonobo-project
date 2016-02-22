@@ -41,9 +41,10 @@
 
       <!-- _______________MAIN_______________ -->
         <div class="main">
-
           <!-- ________BLOC____CONNEXION________ -->
-          <section class="col-lg-7 col-md-7 col-sm-7 col-xs-10">
+          <div class="col-lg-4 col-xs-12">
+          </div>
+          <section class="col-lg-4 col-xs-12">
 
             <div class="box">
 
@@ -71,19 +72,25 @@
                 </p>
                 <p class="textarea right">
                   <textarea class="left" cols="40" rows="5"></textarea>
+                </br>
                   <input class="left" value="SEND" type="submit" />
                 </p>
               </div>
-              <a onclick="$(this).add_comment(<?php echo $page_id;?>);return false;" class="right effect shadow" href="#">Add Comment</a>
             </div>
 
           </section>
 
+          </div>
+
+          <div class="col-lg-4 col-xs-12 ">
+          </div>
+
+
 
        </div> <!--fermeture du row -->
-
+ </div> <!--fermeture de main-->
        <!-- __________FOOTER_________ -->
-         <!-- <div class="row"> -->
+         <div class="row">
          <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
            <ul>
              <li class="btntwitter"><a href="#"><img src="img/logo_f.png" alt="Logo lien Twitter" /></a></li>
@@ -91,8 +98,7 @@
            </ul>
          </footer>
 
-      </div> <!--fermeture de main -->
-
+       
      </div> <!--fermeture de container-->
 
     <script src="lib/jquery-1.7.1.min.js"></script>
