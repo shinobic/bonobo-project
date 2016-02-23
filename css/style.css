@@ -227,6 +227,13 @@ h1, h2{
   color:gold;
 }
 
+
+textarea{width: 90%;}
+
+.buttontweet{width:25vh;}
+
+
+
 form{clear:both;
   position: relative;
   margin: auto;

@@ -45,8 +45,10 @@
 
         <div class="main">
           <div class="row">
+          <div class="col-md-2 col-xs-2">
+          </div>
           <!-- ________BLOC____CONNEXION________ -->
-          <div class="col-md-10 col-xs-10">
+          <div class="col-md-8 col-xs-8">
           <div class="row">
           <div class="col-md-1 col-xs-1">
           </div>
@@ -56,11 +58,11 @@
 
             </div>
             <div class="comments">
-              <?php
+              <!-- <?php
                 foreach ((array) comments($page_id) as $comment) {
-              ?>
+              ?> -->
                 <div class="comment shadow effect">
-                  <p class="left tip" title="<?php echo $comment['username'];?> Said">
+                  <!-- <p class="left tip" title="<?php echo $comment['username'];?> Said">
                     <img class="avatar" src="<?php echo get_gravatar($comment['email'],40);?>" />
                   </p>
                   <p class="body right">
@@ -68,18 +70,18 @@
                         <span class="blue">
                         </span> · <a class="red" href="#" onclick="$(this).delete_comment(<?php echo $comment['id'];?>); return false;">Remove</a>
                       </div>
-                  </p>
+                  </p> -->
                 </div>
             </div>
             <div class="add_comment">
               <div class="write shadow comment">
-                <p class="left">
+                <!-- <p class="left">
                   <img class="avatar" src="#" />
-                </p>
+                </p> -->
                 <p class="textarea right">
-                  <textarea class="left" cols="40" rows="5"></textarea>
+                  <textarea class="left" cols="50" rows="4"></textarea>
                 </br>
-                  <input class="left" value="SEND" type="submit" />
+                  <input id="send" class="left button buttontweet" value="SEND" type="submit" />
                 </p>
               </div>
             </div>
