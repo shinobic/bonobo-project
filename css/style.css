@@ -271,8 +271,12 @@ footer a, footer a:hover, footer ul li a img{
   text-decoration: none;
 }
 
+.footertweets{bottom:0;
+  /*display: inline;*/
+  width:100%;
+}
 
-p { margin-bottom: 20px; }
+/*p { margin-bottom: 20px; }*/
 
 /* Media Queries
 *
