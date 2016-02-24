@@ -35,7 +35,7 @@ $(document).ready(function() {
     success: function(json) { // Je récupère la réponse du fichier PHP
       //alert(json); // J'affiche cette réponse
       for(var i=0; i<json.length; i++){
-        $('.effect').append('<p class="tweet">' + "Le " + json[i].date + " à " + json[i].time + " " + json[i].pseudo + " à posté : " + json[i].tweet + '</p>');
+        $('.effect').append('<p class="tweet">' + "Le " + json[i].date + " à " + json[i].time + " " + json[i].pseudo + " à posté : " + json[i].tweet + "  " + '<i style="color: red" class="fa fa-heart-o"></i>' +  " " + '<i class="fa fa-clone"></i>' + '</p>');
       }
     },
     error : function(resultat, statut, erreur){
@@ -65,7 +65,7 @@ $(document).ready(function() {
           var dt = new Date();
           var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
           /*$('.effect').prepend('<p class="bonobo">' + "Le " + dt.getDate() + "/"+ (dt.getMonth()+1) + "/" + dt.getFullYear() + " " + "à " + time + " " + sVar + " " + "à posté : "  + val + '</p>');*/
-          $('.effect').prepend('<div class="bonobo">' + '<p style="display: inline; margin-bottom: 1vh" class="json">' + "Le " + dt.getDate() + "/"  + dt.getFullYear() + " à " + time + " " + sVar + " " + "à posté : " + val + '</p> ' + '<i style="color: red" class="fa fa-times">' + '</div>');
+          $('.effect').prepend('<div class="bonobo">' + '<p style="display: inline; margin-bottom: 1vh" class="json">' + "Le " + dt.getDate() + "/"  + dt.getFullYear() + " à " + time + " " + sVar + " " + "à posté : " + val + '</p> ' + '<i style="color: red" class="fa fa-times"></i>' + " " + '<i style="color: red" class="fa fa-heart-o"></i>' +  " " + '<i class="fa fa-clone"></i>' + '<p></p>' + '</div>');
         },
         error : function(resultat, statut, erreur){
             //traite l'erreur
@@ -117,53 +117,44 @@ $(document).ready(function() {
       $(this).addClass('Tclicked');
     });
 
-    //remove
-    //$('.fa-times').off('click').on("click", function() {
-    $('.red').off('click').on("click", function() {
-      //requete serveur pour supprimer son tweet
-      $.ajax({
-        url : 'http://localhost/bonobo-server/tweetoff.php?action=delet', // La ressource ciblée
-        success: function(response) { // Je récupère la réponse du fichier PHP
-          //remove le tweet selectionné
-          $(".clicked").remove();
-        },
+  //remove
+  $('.fa-times').off('click').on("click", function() {
+    //alert('pioyf');
+    //requete serveur pour supprimer son tweet
+    $.ajax({
+      url : 'http://localhost/bonobo-server/tweetoff.php?action=delete', // La ressource ciblée
+      success: function(response) { // Je récupère la réponse du fichier PHP
+        //remove le tweet selectionné
+        $(".clicked").remove();
+      },
         error : function(resultat, statut, erreur){
-          //traite l'erreur
-          alert(erreur);
-        }
-      });
+        //traite l'erreur
+        //alert(erreur);
+      }
     });
+  });
 
-    $("#like").on("submit", function(e) {
-      //requete serveur pour liker un tweet
-      $.ajax({
-        //on indique au serveur qu'on a liké avec envois de l'id
-        url : 'http://localhost/bonobo-server/like.php?tid='+id, // La ressource ciblée
-        success: function(response) { // Je récupère la réponse du fichier PHP
-          //mark as liked
-          $(".Tclicked").addClass('liked');
-        },
-        error : function(resultat, statut, erreur){
-          //traite l'erreur
-          alert(resultat.status);
-        }
-      });
+  /*$("#tweetoff").on("submit", function(e) {
+    //e.preventDefault();
+    //requete serveur pour supprimer son tweet
+    $.ajax({
+       url : 'tweetoff.php' // La ressource ciblée
     });
-/*    $("#retweet").on("submit", function(e) {
-      //e.preventDefault();
-      //requete serveur pour retweeter
-      $.ajax({
-         url : 'http://localhost/bonobo-server/retweet.php' // La ressource ciblée
-         success: function(response) { // Je récupère la réponse du fichier PHP
-           //mark as liked
-           alert(response)
-         },
-         error : function(resultat, statut, erreur){
-           //traite l'erreur
-           alert(statut);
-         }
-      });
-    });*/
-  }
+  });*/
+  $("#like").on("submit", function(e) {
+    //e.preventDefault();
+    //requete serveur pour le like
+    $.ajax({
+       url : 'like.php' // La ressource ciblée
+    });
+  });
+  $("#retweet").on("submit", function(e) {
+    //e.preventDefault();
+    //requete serveur pour le délog
+    $.ajax({
+       url : 'retweet.php' // La ressource ciblée
+    });
+  });
+}
   setInterval(onTick, 500);
 })
