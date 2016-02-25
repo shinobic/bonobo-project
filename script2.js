@@ -49,7 +49,7 @@ $(document).ready(function() {
           //good on peut afficher le tweet
           var dt = new Date();
           var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-          $('.effect').prepend('<div class="bonobo">' + '<p style="display: inline; margin-bottom: 1vh" class="json">' + "Le " + dt.getDate() + "/"  + dt.getFullYear()
+          $('.effect').prepend('<div class="bonobo">' + '<p style="display: inline">' + "Le " + dt.getDate() + "/"  + dt.getFullYear()
            + " à " + time + " " + sVar + " " + "à posté : " + val + '</p> ' + '<i style="color: red" class="fa fa-times"></i>' + '<span> </span>' +
            '<i style="color: red" class="fa fa-heart-o"></i>' + '<span> </span>' + '<i class="fa fa-clone"></i>' + '<p></p>' + '</div>');
         },
@@ -93,11 +93,6 @@ $(document).ready(function() {
       });
     });
 
-    //select un tweet
-/*    $('.tweet').off('click').on("click", function() {
-      $(this).addClass('Tclicked');
-    });*/
-
     //remove
     $('.fa-times').off('click').on("click", function() {
       var mydiv = $(this).parent(".bonobo");
@@ -136,15 +131,19 @@ $(document).ready(function() {
     });
 
     $(".fa-clone").off('click').on("click", function() {
-      var val = $(".Tclicked p:first").text();
-      alert(val);
+      var mydiv = $(this).parent(".tweet");
+      var val = mydiv.find("p").text();
+
       //requete serveur pour retweeter
       $.ajax({
          url : 'http://localhost/bonobo-server/retweet.php', // La ressource ciblée
          success: function(response) { // Je récupère la réponse du fichier PHP
-           //mark as retweeted
-           //alert(response)
-          // $(".Tclicked").addClass('retweeted').removeClass("Tclicked");
+           //retweet
+           var dt = new Date();
+           var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+           $('.effect').prepend('<div class="bonobo">' + '<p style="display: inline">' + "Le " + dt.getDate() + "/"  + dt.getFullYear()
+            + " à " + time + " " + sVar + " " + "à posté : " + val + '</p> ' + '<i style="color: red" class="fa fa-times"></i>' + '<span> </span>' +
+            '<i style="color: red" class="fa fa-heart-o"></i>' + '<span> </span>' + '<i class="fa fa-clone"></i>' + '<p></p>' + '</div>');
          },
          error : function(resultat, statut, erreur){
            //traite l'erreur
