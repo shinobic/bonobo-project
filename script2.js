@@ -21,7 +21,6 @@ $(document).ready(function() {
       for(var i=0; i<json.length; i++){
         $('.effect').append('<div class="tweet">' + '<p style="display: inline">' + "Le " + json[i].date + " à " + json[i].time + " " + json[i].pseudo + " à posté : " + json[i].tweet + '</p>' +
          " " + '<i style="color: red" class="fa fa-heart-o"></i>' + '<span> </span>' + '<i class="fa fa-clone"></i>' + '<p></p>' + '</div>');
-         //tids[i].push(json[i].tid);
       }
     },
     error : function(resultat, statut, erreur){
@@ -29,6 +28,26 @@ $(document).ready(function() {
       alert(erreur);
     }
   });
+
+  //Set local storage variables
+  var i = Number(localStorage.getItem('tweet-counter')) + 1,
+        $itemList = $('.effect'),
+        order = [],
+        orderList;
+
+  // Load tweet list
+  orderList = localStorage.getItem('tweet-orders');
+
+  orderList = orderList ? orderList.split(',') : [];
+
+  //loop tweet list from local storage if any
+  if(orderList.length > 0) {
+    for(var j = orderList.length; j > 0; j--) {
+        $itemList.append(
+          '<div class="bonobo">' + '<p style="display: inline">' + localStorage.getItem("tweet-" + (j) )  + '</p> ' +
+           '<i style="color: red" class="fa fa-times"></i>' + '<span> </span>' + '<i class="fa fa-clone"></i>' + '<p></p>' + '</div>');
+    }
+  }
 
   //boucle events
   function onTick() {
@@ -46,12 +65,41 @@ $(document).ready(function() {
         data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans l'input)
         success: function(response) { // Je récupère la réponse du fichier PHP
           //alert(response); // J'affiche cette réponse
-          //good on peut afficher le tweet
+
           var dt = new Date();
           var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+          // Take the value of the input field and save it to localStorage
+          var tweet = "Le " + dt.getDate() + "/"  + dt.getFullYear()
+           + " à " + time + " " + sVar + " " + "à posté : " + val;
+
+          localStorage.setItem( "tweet-" + i, tweet );
+
+          // Set the to-do max counter so on page refresh it keeps going up instead of reset
+          localStorage.setItem('tweet-counter', i);
+
+          //good on peut afficher le tweet
+        /*  var dt = new Date();
+          var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();*/
           $('.effect').prepend('<div class="bonobo">' + '<p style="display: inline">' + "Le " + dt.getDate() + "/"  + dt.getFullYear()
            + " à " + time + " " + sVar + " " + "à posté : " + val + '</p> ' + '<i style="color: red" class="fa fa-times"></i>' + '<span> </span>' +
-           '<i style="color: red" class="fa fa-heart-o"></i>' + '<span> </span>' + '<i class="fa fa-clone"></i>' + '<p></p>' + '</div>');
+          '<i class="fa fa-clone"></i>' + '<p></p>' + '</div>');
+
+
+          var $newTweetList = $('.effect div');
+          // Empty the order array
+          order.length = 0;
+
+          // Go through the list item, grab the class then push into the array
+          $newTweetList.each(function() {
+            var $this = $(this).attr('class');
+            if( $(this).hasClass('bonobo') )
+              order.push($this);
+          });
+
+          // Convert the array into string and save to localStorage
+          localStorage.setItem( 'tweet-orders', order.join(',') );
+
+          i++;
         },
         error : function(resultat, statut, erreur){
           //traite l'erreur
@@ -110,8 +158,10 @@ $(document).ready(function() {
       });
     });
 
+    //like
     $('.fa-heart-o').off('click').on("click", function() {
       var mydiv = $(this).parent(".tweet");
+      var lastp = $(this).parent(".tweet").children().last("p");
       //requete serveur pour liker un tweet
       $.ajax({
         //on indique au serveur qu'on a liké avec envois de l'id
@@ -122,6 +172,7 @@ $(document).ready(function() {
           //alert(response);
           //mark as liked
           mydiv.addClass('liked');
+          $('<span> </span>' + '<span style="color: red" class="fa fa-heart"></span>').insertBefore(lastp);
         },
         error : function(resultat, statut, erreur){
           //traite l'erreur
@@ -130,6 +181,7 @@ $(document).ready(function() {
       });
     });
 
+    //retweet
     $(".fa-clone").off('click').on("click", function() {
       var mydiv = $(this).parent(".tweet");
       var val = mydiv.find("p").text();
@@ -152,5 +204,6 @@ $(document).ready(function() {
       });
     });
   }
+//  localStorage.clear();
   setInterval(onTick, 500);
 })
